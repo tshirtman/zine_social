@@ -10,11 +10,22 @@ from zine.api import *
 from zine.views.admin import render_admin_response
 
 def add_social_banner(post):
+    url = url_for(post)
     return '''
-            <span class="social_icons">
+            <div class="social_icons">
             <g:plusone>
-            '''+ url_for(post) + '''%s</g:plusone>
-            </span>
+            '''+ url +'''%s</g:plusone>
+
+            <a href="http://twitter.com/share" class="twitter-share-button"
+            data-url="'''+ url +'''" data-count="none">Tweet</a><script
+            type="text/javascript" src="http://platform.twitter.com/widgets.js">
+            </script>
+
+            <span id="fb-root"></span><script
+            src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+            <fb:like href="'''+ url +'''" send="true" layout="button_count"
+            width="450" show_faces="true" font=""></fb:like>
+            </div>
         '''
 
 def insert_header_js(metadata):
