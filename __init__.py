@@ -13,16 +13,12 @@ def add_social_banner(post):
     url = url_for(post)
     return '''
             <div class="social_icons">
-            <g:plusone>
-            '''+ url +'''%s</g:plusone>
+            <g:plusone href="'''+ url +'''"></g:plusone>
 
             <a href="http://twitter.com/share" class="twitter-share-button"
-            data-url="'''+ url +'''" data-count="none">Tweet</a><script
-            type="text/javascript" src="http://platform.twitter.com/widgets.js">
-            </script>
+            data-url="'''+ url +'''" data-count="none">Tweet</a>
 
-            <span id="fb-root"></span><script
-            src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+            <span id="fb-root"></span>
             <fb:like href="'''+ url +'''" send="true" layout="button_count"
             width="450" show_faces="true" font=""></fb:like>
             </div>
@@ -30,9 +26,17 @@ def add_social_banner(post):
 
 def insert_header_js(metadata):
     metadata.append(
-            '''<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+            '''
+            <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
             {lang: 'fr'}
-            </script> ''')
+            </script>
+
+           <script
+            type="text/javascript" src="http://platform.twitter.com/widgets.js">
+            </script>
+
+            <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+            ''')
 
 def setup(app, plugin):
     """This function is called by Zine in the application initialization
