@@ -1,5 +1,5 @@
 Name: social plugin
-Plugin URL:
+Plugin URL: http://github.com/tshirtman/zine_social/
 Author: gabriel Pettier
 Author URL: blob.tshirtman.fr
 License: GPL
