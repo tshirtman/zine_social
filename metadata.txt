@@ -1,0 +1,7 @@
+Name: social plugin
+Plugin URL:
+Author: gabriel Pettier
+Author URL: blob.tshirtman.fr
+License: GPL
+Version: 0.1
+Description: add a social network bar at bottom of entries
